@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect 4: Pokémon Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar left-sidebar" id="redSidebar">
+        <div class="sidebar-content">
+            <h3>RED</h3>
+            <div id="redTypeDisplay"></div>
+            <button class="assist-toggle" id="redAssistBtn">Assist</button>
+            <div id="redAssistInfo" class="assist-info" style="display: none;"></div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1>Connect 4: Pokémon Edition</h1>
+        <div id="board"></div>
+        <div class="button-container">
+            <button id="resetBtn">Reset Game</button>
+            <button id="typeChartBtn">Type Chart</button>
+            <button id="helpBtn">?</button>
+            <button id="logsBtn">Logs</button>
+        </div>
+        <div id="message"></div>
+        <div class="credits">
+            <p>Game concept inspired by <a href="https://youtu.be/WXgpjCiCl58?si=GLooNqn9W39dg6cv" target="_blank" rel="noopener">this video</a></p>
+            <p>Created by <a href="https://github.com/AyushZero" target="_blank" rel="noopener">AyushZero</a></p>
+        </div>
+    </div>
+    
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeHelp">&times;</span>
+            <h2>How to Play</h2>
+            <div class="help-content">
+                <h3>Objective</h3>
+                <p>Connect 4 pieces of your color in a row (horizontally, vertically, or diagonally) to win!</p>
+                
+                <h3>Basic Rules</h3>
+                <ul>
+                    <li>Players alternate turns dropping colored pieces into columns</li>
+                    <li>Pieces fall to the lowest available position in the column</li>
+                    <li>First player to get 4 in a row wins!</li>
+                </ul>
+                
+                <h3>Pokémon Type Mechanics</h3>
+                <p>This version adds Pokémon type interactions:</p>
+                <ul>
+                    <li>Each piece has a <span class="highlight">random Pokémon type</span></li>
+                    <li>Your next type is shown in your sidebar</li>
+                    <li>When a piece lands directly on an opponent's piece, they interact based on type effectiveness</li>
+                </ul>
+                
+                <h3>Type Interactions</h3>
+                <ul>
+                    <li><span class="highlight">Super Effective (2×)</span>: Your piece destroys the opponent's piece below and falls into its space</li>
+                    <li><span class="highlight">Not Very Effective (0.5×)</span>: Opponent's piece destroys your incoming piece (your piece doesn't get placed)</li>
+                    <li><span class="highlight">No Effect (0×)</span>: Immunity - destroys the opponent's piece</li>
+                    <li><span class="highlight">No Team Kills</span>: Your pieces never interact with your own pieces</li>
+                </ul>
+                
+                <h3>Features</h3>
+                <ul>
+                    <li><strong>Type Chart</strong>: View all type matchups</li>
+                    <li><strong>Assist Mode</strong>: Toggle to see your current type's strengths and weaknesses</li>
+                    <li><strong>Logs</strong>: Review all type interactions during the game</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="logsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeLogs">&times;</span>
+            <h2>Game Logs</h2>
+            <div class="logs-content">
+                <div id="logsList"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="typeChartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeTypeChart">&times;</span>
+            <h2>Pokémon Type Chart</h2>
+            <div class="chart-legend">
+                <span class="legend-item"><span class="legend-super">2×</span> Super Effective</span>
+                <span class="legend-item"><span class="legend-weak">0.5×</span> Not Very Effective</span>
+                <span class="legend-item"><span class="legend-immune">0×</span> No Effect</span>
+            </div>
+            <div id="typeChartDisplay"></div>
+        </div>
+    </div>
+    
+    <div class="sidebar right-sidebar" id="blueSidebar">
+        <div class="sidebar-content">
+            <h3>BLUE</h3>
+            <div id="blueTypeDisplay"></div>
+            <button class="assist-toggle" id="blueAssistBtn">Assist</button>
+            <div id="blueAssistInfo" class="assist-info" style="display: none;"></div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
