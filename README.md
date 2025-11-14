@@ -4,7 +4,7 @@ A strategic twist on the classic Connect 4 game that incorporates Pokémon type 
 
 ## 🎮 Play the Game
 
-[Play Now on GitHub Pages](https://yourusername.github.io/Poke4/)
+[Play Now on GitHub Pages](https://ayushzero.github.io/Poke4/)
 
 ## 🌟 Features
 
